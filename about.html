@@ -26,10 +26,11 @@
           <h2 id="contact-title"></h2>
           <p id="contact-p1"></p>
           <p id="contact-p2"></p>
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static demo. Replace with your own form handling.');">
-            <label>Name<br><input type="text" name="name"></label>
-            <label>Email<br><input type="email" name="email"></label>
-            <label>Message<br><textarea name="message" rows="4"></textarea></label>
+          <form name="contact" method="POST" data-netlify="true" class="contact-form">
+            <input type="hidden" name="form-name" value="contact">
+            <label>Name<br><input type="text" name="name" required></label>
+            <label>Email<br><input type="email" name="email" required></label>
+            <label>Message<br><textarea name="message" rows="4" required></textarea></label>
             <button type="submit">Send</button>
           </form>
         </section>
