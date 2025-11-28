@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Me — Eric Greuter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Eric Greuter">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/myself.jpg" alt="Eric Greuter">
+      </div>
+      <div class="about-content">
+        <section class="panel">
+          <h2 id="about-title"></h2>
+          <p id="about-p1"></p>
+          <p id="about-p2"></p>
+        </section>
+        
+        <section class="panel">
+          <h2 id="contact-title"></h2>
+          <p id="contact-p1"></p>
+          <p id="contact-p2"></p>
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static demo. Replace with your own form handling.');">
+            <label>Name<br><input type="text" name="name"></label>
+            <label>Email<br><input type="email" name="email"></label>
+            <label>Message<br><textarea name="message" rows="4"></textarea></label>
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">© Eric Greuter</footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

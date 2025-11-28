@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pictures — Eric Greuter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="author" content="Eric Greuter">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main>
+    <section class="panel">
+      <h2>Pictures</h2>
+      <div class="gallery" id="gallery-pictures">
+        <!-- Pictures loaded dynamically from pictures.json -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal viewer -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+      <img id="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <div id="modal-caption" class="modal-caption"></div>
+
+  <footer class="site-footer">© Eric Greuter</footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
