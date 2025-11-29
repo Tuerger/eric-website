@@ -26,8 +26,11 @@
           <h2 id="contact-title"></h2>
           <p id="contact-p1"></p>
           <p id="contact-p2"></p>
-          <form name="contact" method="POST" data-netlify="true" class="contact-form">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks.html" class="contact-form">
             <input type="hidden" name="form-name" value="contact">
+            <p style="display:none">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
             <label>Name<br><input type="text" name="name" required></label>
             <label>Email<br><input type="email" name="email" required></label>
             <label>Message<br><textarea name="message" rows="4" required></textarea></label>
