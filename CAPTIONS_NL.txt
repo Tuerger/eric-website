@@ -1,0 +1,33 @@
+header.title=Eric Greuter — Analoge Foto's en Olieverfschilderijen
+nav.home=Home
+nav.pictures=Foto's
+nav.paintings=Olieverfschilderijen
+nav.about=Over & Contact
+
+home.title=Modern Popart Compositie — Gedigitaliseerd
+home.description=Welkom bij mijn kunstgalerie
+
+about.title=Over Mij
+about.paragraph1=Ik ben Eric Greuter. Welkom op mijn kunstgalerie website. Deze site is een eenvoudige HTML5 galerie waar je foto's en olieverfschilderijen kunt bekijken. Klik op een miniatuur om deze groter te bekijken; de bestandsnaam wordt gebruikt om de bijschrifttekst in de footer op te zoeken.
+about.paragraph2=Gebruik het menu hierboven om naar de Foto's of Olieverfschilderijen galerijen te navigeren, of bezoek de Contactpagina om in contact te komen.
+
+contact.title=Contactinformatie
+contact.paragraph1=
+contact.paragraph2=Gebruik het onderstaande contactformulier om contact met mij op te nemen:
+
+form.name=Naam
+form.email=E-mail
+form.message=Bericht
+form.submit=Verzenden
+
+paintings.title=Olieverfschilderijen
+pictures.title=Foto's
+
+thanks.title=Bedankt voor je Bericht!
+thanks.paragraph1=Je inzending is ontvangen. Je ontvangt ook een bevestiging als e-mailnotificaties zijn ingeschakeld in Netlify.
+thanks.link=Terug naar Contact
+
+pictures.picture1=Foto 1 — Een heldere veldstudie van Eric.
+pictures.picture2=Foto 2 — Een rustig hoekje onder zacht licht.
+paintings.painting1=Schilderij 1 — Olieverf op doek, expressief penseelwerk.
+paintings.painting2=Schilderij 2 — Klassieke portret studie in olieverf.

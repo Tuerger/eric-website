@@ -30,6 +30,12 @@ function initializeHeader() {
       });
     });
   }
+  
+  // Initialize language switcher
+  initializeLanguageSwitcher();
+  
+  // Load captions after header is ready
+  loadCaptions();
 }
 
 // Load header when DOM is ready
@@ -39,12 +45,48 @@ if (document.readyState === 'loading') {
   loadHeader();
 }
 
+// Language management
+let currentLang = localStorage.getItem('language') || 'en';
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('language', lang);
+  
+  // Update active flag
+  document.querySelectorAll('.lang-flag').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const activeBtn = document.getElementById(`lang-${lang}`);
+  if (activeBtn) activeBtn.classList.add('active');
+  
+  // Reload captions
+  loadCaptions();
+}
+
+// Initialize language switcher after header loads
+function initializeLanguageSwitcher() {
+  const langEn = document.getElementById('lang-en');
+  const langNl = document.getElementById('lang-nl');
+  
+  if (langEn) {
+    langEn.addEventListener('click', () => setLanguage('en'));
+  }
+  if (langNl) {
+    langNl.addEventListener('click', () => setLanguage('nl'));
+  }
+  
+  // Set initial active state
+  const activeBtn = document.getElementById(`lang-${currentLang}`);
+  if (activeBtn) activeBtn.classList.add('active');
+}
+
 // Load captions from text file
 let captions = { pictures: {}, paintings: {}, home: {} };
 
 async function loadCaptions() {
   try {
-    const response = await fetch('CAPTIONS.txt');
+    const filename = currentLang === 'nl' ? 'CAPTIONS_NL.txt' : 'CAPTIONS.txt';
+    const response = await fetch(filename);
     const text = await response.text();
     
     // Parse the text file
@@ -108,13 +150,65 @@ async function loadCaptions() {
         contactP2.textContent = captions.contact.paragraph2;
       }
     }
+
+    // Update header content
+    if (captions.header) {
+      const headerTitle = document.getElementById('header-title');
+      if (headerTitle && captions.header.title) {
+        headerTitle.textContent = captions.header.title;
+      }
+    }
+
+    // Update navigation
+    if (captions.nav) {
+      const navHome = document.getElementById('nav-home');
+      const navPictures = document.getElementById('nav-pictures');
+      const navPaintings = document.getElementById('nav-paintings');
+      const navAbout = document.getElementById('nav-about');
+      
+      if (navHome && captions.nav.home) navHome.textContent = captions.nav.home;
+      if (navPictures && captions.nav.pictures) navPictures.textContent = captions.nav.pictures;
+      if (navPaintings && captions.nav.paintings) navPaintings.textContent = captions.nav.paintings;
+      if (navAbout && captions.nav.about) navAbout.textContent = captions.nav.about;
+    }
+
+    // Update gallery page titles
+    const paintingsTitle = document.getElementById('paintings-title');
+    const picturesTitle = document.getElementById('pictures-title');
+    if (paintingsTitle && captions.paintings && captions.paintings.title) {
+      paintingsTitle.textContent = captions.paintings.title;
+    }
+    if (picturesTitle && captions.pictures && captions.pictures.title) {
+      picturesTitle.textContent = captions.pictures.title;
+    }
+
+    // Update thanks page
+    if (captions.thanks) {
+      const thanksTitle = document.getElementById('thanks-title');
+      const thanksP1 = document.getElementById('thanks-p1');
+      const thanksLink = document.getElementById('thanks-link');
+      
+      if (thanksTitle && captions.thanks.title) thanksTitle.textContent = captions.thanks.title;
+      if (thanksP1 && captions.thanks.paragraph1) thanksP1.textContent = captions.thanks.paragraph1;
+      if (thanksLink && captions.thanks.link) thanksLink.textContent = captions.thanks.link;
+    }
+
+    // Update form labels
+    if (captions.form) {
+      const formNameLabel = document.getElementById('form-name-label');
+      const formEmailLabel = document.getElementById('form-email-label');
+      const formMessageLabel = document.getElementById('form-message-label');
+      const formSubmit = document.getElementById('form-submit');
+      
+      if (formNameLabel && captions.form.name) formNameLabel.textContent = captions.form.name;
+      if (formEmailLabel && captions.form.email) formEmailLabel.textContent = captions.form.email;
+      if (formMessageLabel && captions.form.message) formMessageLabel.textContent = captions.form.message;
+      if (formSubmit && captions.form.submit) formSubmit.textContent = captions.form.submit;
+    }
   } catch (error) {
     console.error('Failed to load captions:', error);
   }
 }
-
-// Load captions on page load
-loadCaptions();
 
 // Load gallery images dynamically
 async function loadGallery() {
