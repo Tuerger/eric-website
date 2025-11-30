@@ -13,6 +13,6 @@ Then open http://localhost:8000 in your browser.
 Notes:
 - The filename (e.g. `picture1.svg`) is used as the reference key for the caption text in `js/main.js` (the `captions` object).
 - Replace sample SVGs with real images; keep the `data-filename` attribute on thumbnails matching the real filenames so captions work.
-- This is a static demo. Replace the contact form action if you want a working form.
+- Contact form is powered by Netlify Forms with email notifications.
 
 Owner: Eric Greuter
