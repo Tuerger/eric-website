@@ -18,6 +18,13 @@
         <figcaption></figcaption>
       </figure>
     </div>
+
+    <!-- Hidden form to ensure Netlify detects the contact form at build time -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name">
+      <input type="email" name="email">
+      <textarea name="message"></textarea>
+    </form>
   </main>
 
   <footer class="site-footer">© Eric Greuter</footer>
