@@ -6,6 +6,11 @@ body{font-family:Aptos, sans-serif;margin:0;background:var(--bg);color:var(--tex
 .site-brand{display:flex;align-items:center;background:#4d6291;padding:0.25rem;border-radius:4px;text-decoration:none;cursor:pointer}
 .site-logo{height:50px;width:auto}
 .site-title{font-weight:300;position:absolute;left:50%;transform:translateX(-50%);font-size:2cap;text-decoration:none;color:inherit;cursor:pointer}
+.language-switcher{display:flex;gap:0.5rem;margin-left:auto;margin-right:1rem}
+.lang-flag{background:none;border:2px solid transparent;border-radius:4px;padding:0.25rem;cursor:pointer;transition:all 0.2s;opacity:0.6;display:flex;align-items:center;justify-content:center}
+.lang-flag img{width:28px;height:auto;display:block}
+.lang-flag:hover{opacity:1;transform:scale(1.1)}
+.lang-flag.active{opacity:1;border-color:#dac5c5;background:rgba(218,197,197,0.2)}
 .hamburger{display:inline-block;font-size:1.7rem;background:none;border:2px solid #dac5c5;border-radius:50%;padding:0.5rem;cursor:pointer;color:white;width:50px;height:50px;display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 6px rgba(0,0,0,0.3)}
 .site-nav{position:absolute;top:60px;right:10px;background:white;border:1px solid #e6eef8;padding:0.5rem;border-radius:6px;display:none;flex-direction:column;z-index:100}
 .site-nav.show{display:flex}
