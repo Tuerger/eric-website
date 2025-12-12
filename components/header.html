@@ -1,23 +1,47 @@
+<!-- Site Header Component - Loaded dynamically by main.js -->
 <header class="site-header">
+  <!-- Logo -->
   <a href="index.html" class="site-brand">
     <img src="images/Logo.png" alt="Logo" class="site-logo">
   </a>
+  
+  <!-- Site title (centered, content from CAPTIONS.txt) -->
   <a href="index.html" class="site-title">
     <span id="header-title"></span>
   </a>
+  
+  <!-- Language switcher (desktop only, hidden on mobile) -->
   <div class="language-switcher">
-    <button id="lang-en" class="lang-flag active" aria-label="English" title="English">
+    <button type="button" class="lang-flag active" data-lang="en" aria-label="English" title="English">
       <img src="images/flag-en.png" alt="English">
     </button>
-    <button id="lang-nl" class="lang-flag" aria-label="Nederlands" title="Nederlands">
+    <button type="button" class="lang-flag" data-lang="nl" aria-label="Nederlands" title="Nederlands">
       <img src="images/flag-nl.png" alt="Nederlands">
     </button>
   </div>
+  
+  <!-- Hamburger menu button -->
   <button id="hamburger" class="hamburger" aria-label="Open menu">☰</button>
+  
+  <!-- Navigation dropdown menu -->
   <nav id="site-nav" class="site-nav">
+    <!-- Navigation links (text from CAPTIONS.txt) -->
     <a href="index.html" id="nav-home"></a>
     <a href="pictures.html" id="nav-pictures"></a>
     <a href="paintings.html" id="nav-paintings"></a>
     <a href="about.html" id="nav-about"></a>
+    
+    <!-- Language switcher (mobile only, shown in dropdown) -->
+    <div class="nav-language-switcher">
+      <span class="nav-lang-label">Language:</span>
+      <div class="nav-lang-buttons">
+        <button type="button" class="lang-flag" data-lang="en" aria-label="English" title="English">
+          <img src="images/flag-en.png" alt="English">
+        </button>
+        <button type="button" class="lang-flag" data-lang="nl" aria-label="Nederlands" title="Nederlands">
+          <img src="images/flag-nl.png" alt="Nederlands">
+        </button>
+      </div>
+    </div>
   </nav>
 </header>

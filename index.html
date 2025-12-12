@@ -2,21 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Eric Greuter — Art</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,height=device-height,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EG Art">
+  <meta name="theme-color" content="#4d6291">
+  <title>Eric Greuter — Art Gallery | Oil Paintings & Analog Photography</title>
+  <meta name="description" content="Discover the art gallery of Eric Greuter featuring original oil paintings and analog photography. Browse collections of expressive oil paintings on canvas and authentic analog photos.">
+  <meta name="keywords" content="Eric Greuter, art gallery, oil paintings, analog photography, canvas art, Dutch artist, contemporary art, fine art photography, artwork, painter, photographer">
   <link rel="stylesheet" href="css/style.css">
   <meta name="author" content="Eric Greuter">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/images/Logo.ico" sizes="any" type="image/x-icon">
+  <meta name="theme-color" content="#4d6291">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eric Greuter — Art Gallery | Oil Paintings & Analog Photography">
+  <meta property="og:description" content="Discover the art gallery of Eric Greuter featuring original oil paintings and analog photography.">
+  <meta property="og:image" content="https://magnificent-clafoutis-19e86a.netlify.app/images/lead.jpg">
+  <meta property="og:url" content="https://magnificent-clafoutis-19e86a.netlify.app/">
+  
 </head>
 <body>
+  <!-- Header loaded dynamically from components/header.html -->
   <div id="header-container"></div>
 
   <main>
+    <!-- Welcome description box (content from CAPTIONS.txt) -->
     <div class="home-description-box" id="home-description"></div>
+    
+    <!-- Featured circular image with caption -->
     <div class="home-svg-container">
-      <figure>
-        <img src="images/lead.jpg" alt="Featured artwork" class="home-image">
-        <figcaption></figcaption>
-      </figure>
+      <div class="image-layers">
+        <img src="images/lead.jpg" alt="Featured artwork layer 1" class="home-image layer-1" loading="lazy">
+        <img src="images/lead.jpg" alt="Featured artwork layer 2" class="home-image layer-2" loading="lazy">
+        <img src="images/lead.jpg" alt="Featured artwork layer 3" class="home-image layer-3" loading="lazy">
+        <img src="images/lead.jpg" alt="Featured artwork layer 4" class="home-image layer-4" loading="lazy">
+        <img src="images/lead.jpg" alt="Featured artwork layer 5" class="home-image layer-5" loading="lazy">
+      </div>
+      <figcaption></figcaption>
     </div>
 
     <!-- Hidden form to ensure Netlify detects the contact form at build time -->
@@ -27,8 +52,10 @@
     </form>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">© Eric Greuter</footer>
 
+  <!-- Main JavaScript: loads header, captions, handles language switching -->
   <script src="js/main.js" defer></script>
 </body>
 </html>

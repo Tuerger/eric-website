@@ -2,24 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,height=device-height,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EG Art">
+  <meta name="theme-color" content="#4d6291">
   <title>Pictures — Eric Greuter</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="author" content="Eric Greuter">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/images/Logo.ico" sizes="any" type="image/x-icon">
+  <meta name="theme-color" content="#4d6291">
 </head>
 <body>
+  <!-- Header loaded dynamically from components/header.html -->
   <div id="header-container"></div>
 
   <main>
     <section class="panel">
+      <!-- Gallery title (content from CAPTIONS.txt) -->
       <h2 id="pictures-title"></h2>
+      
+      <!-- Gallery grid - pictures loaded from images/pictures/pictures.json -->
       <div class="gallery" id="gallery-pictures">
         <!-- Pictures loaded dynamically from pictures.json -->
       </div>
     </section>
   </main>
 
-  <!-- Modal viewer -->
+  <!-- Modal viewer for full-size images -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-content">
       <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
@@ -27,10 +38,13 @@
     </div>
   </div>
 
+  <!-- Caption displayed at bottom of modal -->
   <div id="modal-caption" class="modal-caption"></div>
 
+  <!-- Footer -->
   <footer class="site-footer">© Eric Greuter</footer>
 
+  <!-- Main JavaScript: loads header, gallery, modal viewer, captions -->
   <script src="js/main.js" defer></script>
 </body>
 </html>

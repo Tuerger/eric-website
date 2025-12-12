@@ -52,58 +52,75 @@ function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('language', lang);
   
-  // Update active flag
+  // Update active state for all language buttons (both header and nav)
   document.querySelectorAll('.lang-flag').forEach(btn => {
-    btn.classList.remove('active');
+    if (btn.dataset.lang === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
   });
-  const activeBtn = document.getElementById(`lang-${lang}`);
-  if (activeBtn) activeBtn.classList.add('active');
   
   // Reload captions
   loadCaptions();
+
+  // Close mobile nav after selection for clearer feedback
+  const nav = document.getElementById('site-nav');
+  if (nav && nav.classList.contains('show')) {
+    nav.classList.remove('show');
+  }
 }
 
 // Initialize language switcher after header loads
 function initializeLanguageSwitcher() {
-  const langEn = document.getElementById('lang-en');
-  const langNl = document.getElementById('lang-nl');
-  
-  if (langEn) {
-    langEn.addEventListener('click', () => setLanguage('en'));
-  }
-  if (langNl) {
-    langNl.addEventListener('click', () => setLanguage('nl'));
-  }
-  
-  // Set initial active state
-  const activeBtn = document.getElementById(`lang-${currentLang}`);
-  if (activeBtn) activeBtn.classList.add('active');
+  const bindHandler = (btn) => {
+    const lang = btn.dataset.lang;
+    
+    // Use touchstart for immediate feedback on mobile
+    let touchHandled = false;
+    
+    btn.addEventListener('touchstart', (e) => {
+      touchHandled = true;
+      btn.style.opacity = '1';
+      btn.style.transform = 'scale(1.1)';
+    }, { passive: true });
+    
+    btn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      if (touchHandled) {
+        setLanguage(lang);
+        touchHandled = false;
+      }
+      btn.style.opacity = '';
+      btn.style.transform = '';
+    }, { passive: false });
+    
+    btn.addEventListener('click', (e) => {
+      // Only trigger if touch didn't already handle it
+      if (!touchHandled) {
+        e.preventDefault();
+        setLanguage(lang);
+      }
+    });
+  };
+
+  // Bind handlers to all language buttons present (header + nav)
+  document.querySelectorAll('.lang-flag').forEach(bindHandler);
+
+  // Set initial active state across all
+  document.querySelectorAll('.lang-flag').forEach(btn => {
+    if (btn.dataset.lang === currentLang) btn.classList.add('active');
+  });
 }
 
-// Load captions from text file
+// Load captions from JSON file
 let captions = { pictures: {}, paintings: {}, home: {} };
 
 async function loadCaptions() {
   try {
-    const filename = currentLang === 'nl' ? 'CAPTIONS_NL.txt' : 'CAPTIONS.txt';
-    const response = await fetch(filename);
-    const text = await response.text();
-    
-    // Parse the text file
-    const lines = text.split('\n');
-    lines.forEach(line => {
-      line = line.trim();
-      if (line && line.includes('=')) {
-        const [key, value] = line.split('=');
-        const parts = key.split('.');
-        
-        if (parts.length === 2) {
-          const [section, item] = parts;
-          if (!captions[section]) captions[section] = {};
-          captions[section][item] = value;
-        }
-      }
-    });
+    const response = await fetch('captions.json');
+    const allCaptions = await response.json();
+    captions = allCaptions[currentLang] || allCaptions['en'] || {};
     
     // Update home page caption if it exists
     const homeCaption = document.querySelector('.home-svg-container figcaption');
@@ -120,17 +137,23 @@ async function loadCaptions() {
     // Update about page content if it exists
     if (captions.about) {
       const aboutTitle = document.getElementById('about-title');
+      const aboutQuote = document.getElementById('about-quote');
       const aboutP1 = document.getElementById('about-p1');
       const aboutP2 = document.getElementById('about-p2');
       
       if (aboutTitle && captions.about.title) {
         aboutTitle.textContent = captions.about.title;
       }
+      if (aboutQuote && captions.about.quote) {
+        aboutQuote.textContent = captions.about.quote;
+      }
       if (aboutP1 && captions.about.paragraph1) {
-        aboutP1.textContent = captions.about.paragraph1;
+        const p = captions.about.paragraph1;
+        aboutP1.textContent = Array.isArray(p) ? p.join(' ') : p;
       }
       if (aboutP2 && captions.about.paragraph2) {
-        aboutP2.textContent = captions.about.paragraph2;
+        const p = captions.about.paragraph2;
+        aboutP2.textContent = Array.isArray(p) ? p.join(' ') : p;
       }
     }
     
@@ -147,7 +170,8 @@ async function loadCaptions() {
         contactP1.innerHTML = captions.contact.paragraph1.replace('eric.greuter@gmail.com', '<strong>eric.greuter@gmail.com</strong>');
       }
       if (contactP2 && captions.contact.paragraph2) {
-        contactP2.textContent = captions.contact.paragraph2;
+        const p = captions.contact.paragraph2;
+        contactP2.textContent = Array.isArray(p) ? p.join(' ') : p;
       }
     }
 
@@ -189,7 +213,10 @@ async function loadCaptions() {
       const thanksLink = document.getElementById('thanks-link');
       
       if (thanksTitle && captions.thanks.title) thanksTitle.textContent = captions.thanks.title;
-      if (thanksP1 && captions.thanks.paragraph1) thanksP1.textContent = captions.thanks.paragraph1;
+      if (thanksP1 && captions.thanks.paragraph1) {
+        const p = captions.thanks.paragraph1;
+        thanksP1.textContent = Array.isArray(p) ? p.join(' ') : p;
+      }
       if (thanksLink && captions.thanks.link) thanksLink.textContent = captions.thanks.link;
     }
 
@@ -228,6 +255,9 @@ async function loadGallery() {
         img.alt = filename.replace(/\.[^.]+$/, '');
         img.className = 'thumb';
         img.dataset.filename = filename;
+        img.loading = 'lazy';
+        img.crossOrigin = 'anonymous';
+        
         figure.appendChild(img);
         paintingsGallery.appendChild(figure);
       });
@@ -249,6 +279,9 @@ async function loadGallery() {
         img.alt = filename.replace(/\.[^.]+$/, '');
         img.className = 'thumb';
         img.dataset.filename = filename;
+        img.loading = 'lazy';
+        img.crossOrigin = 'anonymous';
+        
         figure.appendChild(img);
         picturesGallery.appendChild(figure);
       });
@@ -258,8 +291,16 @@ async function loadGallery() {
   }
 }
 
-// Load gallery on page load
-loadGallery();
+// Load gallery after a short delay to ensure captions are loaded
+setTimeout(loadGallery, 100);
+// Register service worker for PWA installability
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').catch(err => {
+      console.error('Service worker registration failed:', err);
+    });
+  });
+}
 
 // Site interactivity: hamburger menu and gallery modal with captions
 const hamburger = document.getElementById('hamburger');
@@ -280,19 +321,114 @@ document.addEventListener('click', (e)=>{
 function openModalWithImage(src, filename){
   modalImage.src = src;
   modalImage.alt = filename || '';
+  
+  // Apply dominant color border to modal image when it loads
+  const applyColorOnce = () => {
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      canvas.width = modalImage.width;
+      canvas.height = modalImage.height;
+      ctx.drawImage(modalImage, 0, 0);
+      
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      
+      let r = 0, g = 0, b = 0;
+      let count = 0;
+      
+      // Sample every 4th pixel for performance
+      for (let i = 0; i < data.length; i += 16) {
+        r += data[i];
+        g += data[i + 1];
+        b += data[i + 2];
+        count++;
+      }
+      
+      r = Math.floor(r / count);
+      g = Math.floor(g / count);
+      b = Math.floor(b / count);
+      
+      const hexColor = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+      
+      modalImage.style.borderColor = hexColor;
+      modalImage.style.borderWidth = '8px';
+      modalImage.style.borderStyle = 'solid';
+      
+      modalImage.removeEventListener('load', applyColorOnce);
+    } catch (error) {
+      console.error('Failed to extract color:', error);
+    }
+  };
+  
+  // If image is already cached/loaded
+  if (modalImage.complete && modalImage.naturalWidth) {
+    applyColorOnce();
+  } else {
+    // Wait for image to load
+    modalImage.addEventListener('load', applyColorOnce);
+  }
+  
   const key = filename ? filename.replace(/\.[^.]+$/, '') : '';
   
   // Check if it's a picture or painting based on filename
-  let captionText = '';
+  let captionHTML = '';
   if (captions.pictures && captions.pictures[key]) {
-    captionText = captions.pictures[key];
+    const pictureData = captions.pictures[key];
+    if (typeof pictureData === 'object') {
+      // New format with title and description
+      const title = pictureData.title || '';
+      const description = pictureData.description || '';
+      const descText = Array.isArray(description) ? description.join(' ') : description;
+      if (title) {
+        captionHTML = `<div class="caption-title">${title}</div>`;
+        if (descText) {
+          captionHTML += `<div class="caption-description">${descText}</div>`;
+        }
+      }
+    } else {
+      // Fallback for old format
+      captionHTML = pictureData;
+    }
   } else if (captions.paintings && captions.paintings[key]) {
-    captionText = captions.paintings[key];
+    const paintingData = captions.paintings[key];
+    if (typeof paintingData === 'object') {
+      // New format with title and description
+      const title = paintingData.title || '';
+      const description = paintingData.description || '';
+      const descText = Array.isArray(description) ? description.join(' ') : description;
+      if (title) {
+        captionHTML = `<div class="caption-title">${title}</div>`;
+        if (descText) {
+          captionHTML += `<div class="caption-description">${descText}</div>`;
+        }
+      }
+    } else {
+      // Fallback for old format
+      captionHTML = paintingData;
+    }
   }
   
-  modalCaption.textContent = captionText;
-  if (captionText) {
+  modalCaption.innerHTML = captionHTML;
+  if (captionHTML) {
     modalCaption.classList.add('show');
+    
+    // Add click handler to title to toggle description
+    const titleEl = modalCaption.querySelector('.caption-title');
+    const descEl = modalCaption.querySelector('.caption-description');
+    if (titleEl && descEl) {
+      titleEl.addEventListener('click', () => {
+        descEl.classList.toggle('show');
+      });
+      // Show description on hover
+      titleEl.addEventListener('mouseenter', () => {
+        descEl.classList.add('show');
+      });
+      titleEl.addEventListener('mouseleave', () => {
+        descEl.classList.remove('show');
+      });
+    }
   }
   modal.classList.add('show');
   modal.setAttribute('aria-hidden', 'false');
@@ -314,3 +450,20 @@ modal.addEventListener('click', (e)=>{
 document.addEventListener('keydown', (e)=>{
   if(e.key === 'Escape') closeModal();
 });
+
+// Disable right-click on images
+document.addEventListener('contextmenu', (e) => {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Disable dragging images
+document.addEventListener('dragstart', (e) => {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault();
+    return false;
+  }
+});
+

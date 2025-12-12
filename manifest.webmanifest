@@ -1,0 +1,35 @@
+{
+  "name": "EG — Analog Photos, Paintings & Drawings",
+  "short_name": "EG Art",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "portrait-primary",
+  "background_color": "#020220",
+  "theme_color": "#4d6291",
+  "description": "Eric Greuter Portfolio",
+  "screenshots": [
+    {
+      "src": "images/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "images/Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/Logo.ico",
+      "sizes": "16x16 24x24 32x32 48x48 64x64 128x128 256x256 512x512",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["photography", "arts"],
+  "prefer_related_applications": false
+}

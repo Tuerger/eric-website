@@ -1,0 +1,127 @@
+{
+  "en": {
+    "header": {"title": "EG — Analog Photography & Paintings"},
+    "nav": {"home": "Home", "pictures": "Analog Photos", "paintings": "Oil Paintings & Drawings", "about": "About & Contact"},
+    "home": {"title": "Popart Experiment — Mixed Media", "description": "Welcome to my gallery"},
+    "about": {
+      "title": "About Me",
+      "quote": "The joy is in the making.",
+      "paragraph1": [
+        "I am Eric Greuter, and since 1980 I have been capturing the world with an analog camera as an amateur photographer.",
+        "Not to hastily shoot dozens of images in quick succession, but to first look calmly, feel, and then press the shutter.",
+        "For that very reason, in 2022 I started a new hobby: painting and drawing.",
+        "Through this, I discovered not only more about color, light, and texture, but also that the act of creating itself brings me great joy."
+      ],
+      "paragraph2": [
+        "Use the hamburger menu above to navigate to the photo or painting portfolios,",
+        "or leave me a message below."
+      ]
+    },
+    "contact": {
+      "title": "Contact Information",
+      "paragraph1": "",
+      "paragraph2": ["Use the contact form below to reach out to me:"]
+    },
+    "form": {"name": "Name", "email": "Email", "message": "Message", "submit": "Send"},
+    "paintings": {
+      "title": "Oil Paintings",
+      "Painting 1": {"title": "Lago Maggiore", "description": ["Oil on canvas - ", "An ode to the \"Blauwe Reiter\" painting group from the early 20th century."]},
+      "Painting 2": {"title": "Mudflat walkers", "description": ["Oil on panel - ", "The rhythm of ebb and flow of the Wadden Sea"]},
+      "Painting 3": {"title": "Sahara storm", "description": ["Oil on canvas - ", "The colors of a Sahara sandstorm."]},
+      "Painting 4": {"title": "Ballet girl", "description": ["Oil on panel - ", "The elegance of a ballet dancer captured in pop-art colors."]},
+      "Painting 5": {"title": "Persistence of game", "description": ["Oil on paper - ", "A nod to Dali's work \"The Persistence of Memory\""]},
+      "Painting 6": {"title": "To head or not to head", "description": ["Oil and oil pastel on paper - ", "Anatomy of a slaughtered chicken as they are offered on the market in France."]},
+      "Painting 7": {"title": "Toulouse de Latrac - woman", "description": ["Pastel pens on paper - ", "Portret of a woman \"After Henri de Toulouse-Lautrec's.\""]},
+      "Painting 8": {"title": "Autumn", "description": ["Oil on paper - ", "The symbols and colors of autumn."]},
+      "Painting 9": {"title": "Eve", "description": ["Oil on paper - ", "A Cobra interpretation of the classic biblical theme."]},
+      "Painting 10": {"title": "Multi dimensional view of church", "description": ["Oil on canvas - ", "The church viewed from multiple dimensions", "it is not always what it seems", "\"inspired by the style of Lyonel Feininger (1871–1956)\"."]},
+      "Painting 11": {"title": "Candlelight", "description": ["Oil on paper - ", "An experiment to paint candlelight", "\"in the style of Gerrit van Honthorst (1592–1656).\""]},
+      "Painting 12": {"title": "Winter landscape", "description": ["Oil on paper - ", "A serene winter landscape", "\"after Peder Mørk Mønsted (1859–1941).\""]},
+      "Painting 14": {"title": "Kitchen roll", "description": ["Oil on canvas - ", "An everyday object."]},
+      "Painting 16": {"title": "Abstract Diptych", "description": ["Oil on paper - ", "Two abstract works combined", "in different color palettes and with different strokes."]}
+    },
+    "pictures": {
+      "title": "Pictures",
+      "Picture 1": {"title": "My Vespa", "description": ["It's not the fastest,", "but it always takes me", "wherever I want to go."]},
+      "Picture 2": {"title": "Columbine", "description": ["When nature creates a work of art,", "it’s called columbine."]},
+      "Picture 3": {"title": "The colors of Brittany", "description": ["A palette where the soft grey-blue", "of the Atlantic skies meets coastlines."]},
+      "Picture 4": {"title": "Solitude in Silver", "description": ["Emphasizes the quiet isolation", "and the monochrome color spectrum."]},
+      "Picture 5": {"title": "Choose Your Path", "description": ["Green or red?", "Sometimes it’s just about taking the right turn."]},
+      "Picture 7": {"title": "Hungry, give me news", "description": ["Graffity art in Doel/ Belgium"]},
+      "Picture 8": {"title": "Unspoken", "description": ["Finding and sharing words became a silent struggle", "– an ode to my mother,", "who, like Michel Van Dousselaere,", "lost her ability to speak."]},
+      "Picture 9": {"title": "Still life #1", "description": ["First attempt to capture transience", "and the traces of time."]},
+      "Picture 11": {"title": "Still life #2", "description": ["Second attempt to capture transience", "and the traces of time."]},
+      "Picture 12": {"title": "A village of contrasts.", "description": ["An old mill stands silent", "while the cooling towers of the nuclear plant rise behind it,", "sending clouds into the sky.", "A stark meeting of past and present", "in one frame."]},
+      "Picture 13": {"title": "Broken Glass", "description": ["The symbol of the end of an era"]},
+      "Picture 14": {"title": "Orchestra of Life and Death", "description": ["Is it a melody of hope,", "or the final chord?"]}
+    }
+    ,
+    "thanks": {
+      "title": "Thank You for Your Message!",
+      "paragraph1": ["Your submission has been received.", "I will contact you as soon as possible."],
+      "link": "Back to Contact"
+    }
+  },
+  "nl": {
+    "header": {"title": "EG — Analoge Fotografie en Schilderijen"},
+    "nav": {"home": "Home", "pictures": "Analoge Foto's", "paintings": "Schilderijen en tekeningen", "about": "Over mij & Contact"},
+    "home": {"title": "Popart Experiment — gemengde technieken", "description": "Welkom bij mijn portfolio"},
+    "about": {
+      "title": "Wie ben ik",
+      "quote": "Het gaat om het maken.",
+      "paragraph1": [
+        "Ik ben Eric Greuter en sinds 1980 fotografeer ik, als amateur met een analoge camera.",
+        "Niet zoals met een digitale camera tientallen beelden achter elkaar te schieten, maar eerst rustig kijken, voelen, en dan afdrukken.",
+        "Juist om die reden ben ik in 2022 begonnen met een nieuwe hobby: schilderen en tekenen.",
+        "Zo ontdekte ik niet alleen meer over kleur, licht en textuur, maar dat juist het maken van, mij veel plezier geeft."
+      ],
+      "paragraph2": [
+        "Gebruik het hamburger menu hierboven om naar de foto of schilderij portfolio's te navigeren,",
+        "of laat hieronder een bericht voor mij achter."
+      ]
+    },
+    "contact": {
+      "title": "Contactinformatie",
+      "paragraph1": "",
+      "paragraph2": ["Gebruik het onderstaande contactformulier om een bericht voor mij achter te laten:"]
+    },
+    "form": {"name": "Naam", "email": "E-mail", "message": "Bericht", "submit": "Verzenden"},
+    "paintings": {
+      "title": "Schilderijen",
+      "Painting 1": {"title": "Lago Maggiore", "description": ["Olieverf op doek - ", "Een ode aan de \"Blauwe Reiter\" schildergroep uit het begin van de 20e eeuw."]},
+      "Painting 2": {"title": "Wadlopers", "description": ["Olieverf op paneel - ", "Het ritme van eb en vloed op de Waddenzee"]},
+      "Painting 3": {"title": "Sahara storm", "description": ["Olieverf op doek - ", "De kleuren van een Sahara zandstorm."]},
+      "Painting 4": {"title": "Ballet danseres", "description": ["Olieverf op paneel - ", "De elegantie van een ballet danseres omringd door pop-art kleuren."]},
+      "Painting 5": {"title": "Volharding der spel", "description": ["Olieverf op papier - ", "Een knipoog naar Dali's werk \"De volharding der herinnering\""]},
+      "Painting 6": {"title": "Met of zonder kop", "description": ["Olieverf en Oliepastel krijt op papier - ", "Anatomie van een geslachte kip zoals ze in Frankrijk aangeboden worden op de markt."]},
+      "Painting 7": {"title": "Toulouse de Latrac - vrouw", "description": ["Pastel potlood op papier - ", "Portret van een vrouw \"naar Henri de Toulouse-Latrac\", Frankrijk."]},
+      "Painting 8": {"title": "Herfst", "description": ["Olieverf op papier - ", "De symbolen en de kleuren van de herst."]},
+      "Painting 9": {"title": "Eva", "description": ["Olieverf op papier - ", "Cobra interpretatie van het klassieke bijbelse thema."]},
+      "Painting 10": {"title": "Multi dimensionaal zicht op kerk", "description": ["Olieverf op canvas - ", "De kerk bekeken vanuit meerdere dimensies", "het is niet altijd wat het lijkt", "\"geïnspireerd door de stijl van Lyonel Feininger (1871–1956)\"."]},
+      "Painting 11": {"title": "Kaarslicht", "description": ["Olieverf op papier - ", "Een experiment om kaarstlicht te schilderen", "\"in de stijl van Gerrit van Honthorst (1592–1656).\""]},
+      "Painting 12": {"title": "Winter landschap", "description": ["Olieverf op papier - ", "Een sereen winter landschap", "\"naar Peder Mørk Mønsted (1859–1941).\""]},
+      "Painting 14": {"title": "Keukenrol", "description": ["Olieverf op canvas - ", "Een alledaags voorwerp."]},
+      "Painting 16": {"title": "Abstract Tweeluik", "description": ["Olieverf op papier - ", "Twee abstracte werken samengevoegd", " in verschillende kleur paletten en met verschillende toets."]}
+    },
+    "pictures": {
+      "title": "Analoge Fotografie",
+      "Picture 1": {"title": "Mijn Vespa", "description": ["Hij is niet de snelste", "maar brengt mij altijd", "waar wil zijn."]},
+      "Picture 2": {"title": "Akelij", "description": ["Als de natuur een kunstwerk maakt,", "heet het akelij."]},
+      "Picture 3": {"title": "De kleuren van Bretagne", "description": ["Een palet waar het zachte grijsblauw", "van de Atlantische luchten", "de kustlijnen ontmoet."]},
+      "Picture 4": {"title": "Eenzaamheid in Zilver", "description": ["Benadrukt de stille afzondering", "en het monochrome kleurenspectrum."]},
+      "Picture 5": {"title": "Kies je koers", "description": ["Groen of rood?", "Soms is het gewoon een kwestie", "van de juiste afslag nemen."]},
+      "Picture 7": {"title": "Ik heb honger, geef me nieuws", "description": ["Graffity kunst in Doel, België"]},
+      "Picture 8": {"title": "Onuitgesproken", "description": ["Woorden vinden en delen werd een stille strijd", "- een ode aan mijn moeder", "die, net als Michel van Dousselaere,", "haar spraakvermogen verloor."]},
+      "Picture 9": {"title": "Stilleven #1", "description": ["Eerste poging om vergankelijkheid", "en de sporen van tijd vast te leggen."]},
+      "Picture 11": {"title": "Stilleven #2", "description": ["Tweede poging om vergankelijkheid", "en de sporen van tijd vast te leggen."]},
+      "Picture 12": {"title": "Een dorp in contrast", "description": ["De oude molen staat stil,", "terwijl de koeltorens van de kerncentrale rookwolken", "de lucht in sturen.", "Oud en nieuw", "in één beeld."]},
+      "Picture 13": {"title": "Gebroken glas", "description": ["Het symbool van het einde", "van een tijdperk"]},
+      "Picture 14": {"title": "Orkest van leven en dood", "description": ["Is het een melodie van hoop,", "of het laatste akkoord?"]}
+    },
+    "thanks": {
+      "title": "Bedankt voor je Bericht!",
+      "paragraph1": ["Je bericht is ontvangen.", "Ik neem zo snel mogelijk contact met je op."],
+      "link": "Terug naar Contact"
+    }
+  }
+}

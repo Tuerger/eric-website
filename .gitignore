@@ -1,3 +1,3 @@
-# Ignore nothing critical for this small static site
+# Ignore nothing critical for this site
 .DS_Store
 node_modules/
