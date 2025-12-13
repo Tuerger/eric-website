@@ -258,6 +258,12 @@ async function loadGallery() {
         img.loading = 'lazy';
         img.crossOrigin = 'anonymous';
         
+        // Add title from captions for hover tooltip
+        const fileKey = filename.replace(/\.[^.]+$/, ''); // "Painting 1.jpg" -> "Painting 1"
+        if (captions.paintings && captions.paintings[fileKey] && captions.paintings[fileKey].title) {
+          img.title = captions.paintings[fileKey].title;
+        }
+        
         figure.appendChild(img);
         paintingsGallery.appendChild(figure);
       });
@@ -281,6 +287,12 @@ async function loadGallery() {
         img.dataset.filename = filename;
         img.loading = 'lazy';
         img.crossOrigin = 'anonymous';
+        
+        // Add title from captions for hover tooltip
+        const fileKey = filename.replace(/\.[^.]+$/, ''); // "Picture 1.jpg" -> "Picture 1"
+        if (captions.pictures && captions.pictures[fileKey] && captions.pictures[fileKey].title) {
+          img.title = captions.pictures[fileKey].title;
+        }
         
         figure.appendChild(img);
         picturesGallery.appendChild(figure);

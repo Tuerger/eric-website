@@ -601,6 +601,31 @@ main {
   pointer-events: auto; /* Re-enable clicks for gallery thumbnails */
 }
 
+/* Enhanced tooltip styling for thumbnail titles */
+.thumb[title] {
+  position: relative;
+}
+
+.thumb[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  color: #dac5c5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: normal;
+  max-width: 200px;
+  text-align: center;
+  z-index: 100;
+  margin-bottom: 8px;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 figcaption {
   font-size: 0.85rem;
   color: #475569;
@@ -812,11 +837,12 @@ figcaption {
     font-size: 0.85rem;
     text-align: center;
     width: auto;
-    max-width: 60%;
+    max-width: 90%;
     margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.2;
   }
 
   /* Hide desktop flags; show flags inside nav dropdown */

@@ -1,5 +1,7 @@
 # Eric Greuter — Art Gallery
 
+**Version:** 1.2.0
+
 A modern, fully-featured portfolio website for analog photography and oil paintings. Built with vanilla HTML, CSS, and JavaScript with Progressive Web App (PWA) support.
 
 ## Features
@@ -7,7 +9,8 @@ A modern, fully-featured portfolio website for analog photography and oil painti
 - **Bilingual Support**: English and Dutch language switching with localStorage persistence
 - **Responsive Design**: Mobile-first approach with optimized layouts for all devices
 - **PWA Installation**: Installable on Windows 11, Android, and iOS with offline support
-- **Dynamic Galleries**: Auto-loaded image galleries from JSON metadata
+- **Dynamic Galleries**: Auto-loaded image galleries from JSON metadata with hover tooltips
+- **Gallery Tooltips**: Hover over thumbnails to see painting/picture titles
 - **Modal Viewer**: Expandable captions with hover/click interaction
 - **Smooth Animations**: Homepage layered image animation with fade-in/out effects
 - **Service Worker**: Offline caching strategy for core assets
@@ -16,6 +19,7 @@ A modern, fully-featured portfolio website for analog photography and oil painti
 - **Contact Form**: Netlify Forms integration with thank you redirect
 - **SEO Optimized**: Meta tags, Open Graph, Twitter Card support
 - **Custom Typography**: Cavolini font from CDN Fonts
+- **Mobile Optimized Title**: Website title wraps to 2 lines on small devices
 
 ## File Structure
 
@@ -126,6 +130,18 @@ Example structure:
 ## License
 
 © 2024 Eric Greuter. All rights reserved.
+
+## Changelog
+
+### v1.2.0 (December 2025)
+- **Added**: Hover tooltips on gallery thumbnails showing painting/picture titles
+- **Improved**: Mobile responsive title now wraps to 2 lines on small devices instead of truncating
+- **Enhanced**: Custom CSS styling for gallery title tooltips with dark background and light text
+
+### v1.1.0 (Previous Release)
+- Initial PWA implementation with service worker
+- Bilingual support (English/Dutch)
+- Dynamic gallery loading from JSON
 
 ## Contact
 

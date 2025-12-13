@@ -1,10 +1,10 @@
 {
-  "name": "EG — Analog Photos, Paintings & Drawings",
-  "short_name": "EG Art",
+  "name": "EG — Portfolio",
+  "short_name": "EG Portfolio",
   "start_url": "/index.html",
   "scope": "/",
   "display": "fullscreen",
-  "orientation": "portrait-primary",
+  "orientation": "natural",
   "background_color": "#020220",
   "theme_color": "#4d6291",
   "description": "Eric Greuter Portfolio",
